@@ -130,8 +130,6 @@ To spin up the entire pipeline, make sure you have granted execution p instances
 
 This approach runs all infrastructure services (Kafka, MinIO, Spark, ClickHouse, Airflow) inside Docker, while EventSim is run manually from your local machine to push data into the Dockerized Kafka.
 
-> **Why run EventSim manually?** EventSim uses an old Kafka client library that is incompatible with modern Kafka (3.x). The workaround is to pipe its output through the local `kafka-console-producer.sh` tool, which only works correctly when run on the host machine.
-
 ### Prerequisites
 - Docker Desktop is running
 - All scripts have execution permission: `chmod +x ~/eventsim_project/scripts/*.sh`
